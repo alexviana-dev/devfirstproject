@@ -189,6 +189,64 @@ h3 {
 
 /*Modifications*/
 
+/* Dropdown Button */
+
+.dropbtn {
+  color: #1f1f1f;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  display: inline-block;
+  padding: 40px 0;
+  font-family: "Muli", sans-serif;
+  position: relative;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: transparent;}
+
+@media (max-width: 990px) {
+  .dropdown-content {
+    display: none;
+  }
+}
+
+@media (max-width: 990px) {
+  .dropdown-content a {
+    display: none;
+  }
+}
+
 /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_work.scss */
 .how_we_work_area1 {
   position: relative;
@@ -336,8 +394,8 @@ h3 {
 
 .help-tip{
     position: absolute;
-/*    top: 23px;*/
-    right: 15px;
+/*    top: 1px;*/
+    left: 240px;
     text-align: center;
     background-color: #f37a20;
     border-radius: 50%;
@@ -372,7 +430,7 @@ h3 {
     position: absolute;
     border-radius: 3px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    right: -1px;
+    right: -50px;
     color: #7e7e7e;
     font-size: 13px;
     line-height: 1.4;
@@ -385,7 +443,7 @@ h3 {
     height: 0;
     border:6px solid transparent;
     border-bottom-color:#fff;
-    right: 7px;
+    right: 57px;
     top:-12px;
 }
 
@@ -478,6 +536,71 @@ h3 {
     0% { opacity:0; }
     100% { opacity:100%; }
 }
+
+.help-tip3{
+    position: absolute;
+/*    top: -1px;*/
+    left: 240px;
+    text-align: center;
+    background-color: #f37a20;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: default;
+}
+
+.help-tip3:before{
+    content:'?';
+    font-weight: bold;
+    color:#fff;
+}
+
+.help-tip3:hover m3{
+    display:block;
+    transform-origin: 100% 0%;
+
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.6s ease-in-out;
+
+}
+
+.help-tip3 m3{    /* The tooltip */
+    display: none;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -50px;
+    color: #7e7e7e;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.help-tip3 m3:before{ /* The pointer of the tooltip */
+    position: absolute;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#fff;
+    right: 57px;
+    top:-12px;
+}
+
+.help-tip3 m3:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}
+
 
 /* The Modal */
 

@@ -27,7 +27,25 @@ if(isset($_SESSION['log_in']))
                               <nav>
                                   <ul id="navigation">
                                         <li><a class="active" href="http://ucr.nz">Home</a></li>
-                                        <li><a class="active" href="http://ucr.nz/form/formpage.php">Contact</a></li>
+                                        <li><a href="http://ucr.nz/form/formpage.php">Contact</a></li>
+<!--
+                                        <div class="dropdown">
+                                          <button class="dropbtn" data-scroll-nav="0">How it works on site</button>
+                                          <div class="dropdown-content">
+                                            <a data-scroll-nav="1">UCR Services</a>
+                                          </div>
+                                        </div>
+-->
+                                        <div class="dropdown hidden-md">
+                                          <button class="dropbtn" data-scroll-nav="2">Site Estimator</button>
+                                          <div class="dropdown-content">
+                                            <a data-scroll-nav="3">Step 1: Personal Details</a>
+                                            <a data-scroll-nav="4">Step 2: Use Case</a>
+                                            <a data-scroll-nav="5">Step 3: Built Environment</a>
+                                            <a data-scroll-nav="6">Step 4: Attach a picture</a>
+                                            <a data-scroll-nav="7">Step 5: Confirm and Send</a>
+                                          </div>
+                                        </div>
 <!--
                                         <li><a data-scroll-nav="0">How it works on site<i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
@@ -35,8 +53,9 @@ if(isset($_SESSION['log_in']))
                                             </ul>
                                         </li>
 -->
+<!--
                                         <li><a data-scroll-nav="2">Site Estimator<i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
+                                            <ul class="submenu hidden-md">
                                                 <li><a data-scroll-nav="3">Step 1: Personal Details</a></li>
                                                 <li><a data-scroll-nav="4">Step 2: Use Case</a></li>
                                                 <li><a data-scroll-nav="5">Step 3: Built Environment</a></li>
@@ -44,6 +63,7 @@ if(isset($_SESSION['log_in']))
                                                 <li><a data-scroll-nav="7">Step 5: Confirm and Send</a></li>
                                             </ul>
                                         </li>
+-->
                                         <li><a class="active" href="login.html">Logout</a></li>
                                   </ul>
                               </nav>
@@ -85,9 +105,15 @@ if(isset($_SESSION['log_in']))
                         </div>
                         <div class="video_watch d-flex align-items-center">
                             <div class="play_btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                <a href="https://www.youtube.com/watch?v=nKXXfshFllw&t=1s" target="_blank"> <i class="fa fa-play"></i> </a>
+                                <a href="https://youtu.be/0MiJzxEh1PE" target="_blank"> <i class="fa fa-play"></i> </a>
                             </div>
-                           <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".7s"> Watch Video</span>
+                           <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".7s"> Industry, Supply Chain & Manufacturing</span>
+                        </div>
+                        <div class="video_watch d-flex align-items-center">
+                            <div class="play_btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                                <a href="https://youtu.be/kLxYiqvmP4g" target="_blank"> <i class="fa fa-play"></i> </a>
+                            </div>
+                           <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".7s"> Supply Chain & Logistics</span>
                         </div>
                     </div>
                 </div>
@@ -120,8 +146,9 @@ if(isset($_SESSION['log_in']))
                                     </div>
                                     <div class="table-row1 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".6s">
                                         <div class="visit6">Standard Services</div>
+                                        
             <!--							<div class="country"> <img src="img/elements/f1.jpg" alt="flag">Canada</div>-->
-                                        <div class="visit5"></div>
+                                        <div class="visit5"></div><div class="help-tip"><m>&#x2022 Standard: out of the box included with subscription</m></div>
                                         <div class="visit5"></div>
                                         <div class="visit5"></div>
                                         <div class="visit5"></div>
@@ -199,7 +226,8 @@ if(isset($_SESSION['log_in']))
             -->
                                     </div>
                                     <div class="table-row wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".6s">
-                                        <div class="visit">PRO Services</div>
+                                        <div class="visit">PRO Services</div><div class="help-tip3"><m3>&#x2022 PRO: custom app and APIs to clients request</m3></div>
+                                        
             <!--							<div class="country"> <img src="img/elements/f5.jpg" alt="flag">Canada</div>-->
                                         <div class="visit7"></div>
                                         <div class="visit7"></div>
@@ -366,7 +394,7 @@ if(isset($_SESSION['log_in']))
                         </div>
                         <div data-scroll-index="3" class="video_watch d-flex align-items-center">
                             <div class="play_btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                <a href="https://www.youtube.com/watch?v=nKXXfshFllw&t=1s" target="_blank"> <i class="fa fa-play"></i> </a>
+                                <a href="https://www.youtube.com/watch?v=G1AKvbwKdhE&feature=youtu.be" target="_blank"> <i class="fa fa-play"></i> </a>
                             </div>
                            <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".7s">How our Site Estimator works</span>
                         </div>
@@ -388,7 +416,7 @@ if(isset($_SESSION['log_in']))
                     <div class="col-md-12 wow fadeInUp">
                         <div class="panel panel-danger wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
                             <div class="panel-body wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                                <form action="makepdf.php" method="post" enctype = "multipart/form-data">
+                                <form id="frm" name="frm" action="makepdf.php" method="post" enctype = "multipart/form-data" onsubmit="return validate()">
                                         <div class="col-md-12">
                                             <h3 class="mb-30">Step 1: Personal Details</h3>
 <!--
@@ -412,11 +440,59 @@ if(isset($_SESSION['log_in']))
                                             </div>
                                         <div class="col-md-12">
                                             <hr>
+                                            
                                             <h3 class="mb-30">Step 2: Use Case</h3>
-                                            <div class="form-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                                <label >Summary Description</label>
-                                                <textarea rows="3" name="message1" class="single-input" placeholder="Type Your Message"></textarea>
+                                            <h4 class="mb-30">Use Case Type</h4>
+                                            <div class="col-md-3 switch-wrap d-flex">
+                                                <div class="primary-checkbox">
+                                                    <input class="checkbox" name="checkboxName[]" value='Behaviour Analysis' type="checkbox" id="second-checkbox">
+                                                    <label for="second-checkbox"></label>
+                                                </div>
+                                                <p>Behaviour Analysis</p>
                                             </div>
+                                            
+                                            <div class="col-md-9 form-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                                                    <input id="details1" type="text" name="details[]"  class="single-input" placeholder="Eg. Movement round site">
+                                            </div>
+                                            <div class="col-md-3 switch-wrap d-flex">
+                                                <div class="primary-checkbox">
+                                                    <input class="checkbox" name="checkboxName[]" value='Asset Tracking' type="checkbox" id="third-checkbox">
+                                                    <label for="third-checkbox"></label>
+                                                </div>
+                                                <p>Asset Tracking</p>
+                                            </div>
+                                            
+                                            <div class="col-md-9 form-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                                                    <input id="details2" type="text" name="details[]"  class="single-input" placeholder="Eg. 4 forklifts">
+                                            </div>
+                                            <div class="col-md-3 switch-wrap d-flex">
+                                                <div class="primary-checkbox">
+                                                    <input class="checkbox" name="checkboxName[]" value='Materials Handling Platforms' type="checkbox" id="forth-checkbox">
+                                                    <label for="forth-checkbox"></label>
+                                                </div>
+                                                <p>Materials Handling Platforms</p>
+                                            </div>
+                                            
+                                            <div class="col-md-9 form-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                                                    <input id="details3" type="text" name="details[]"  class="single-input" placeholder="Eg. 3000 pallets">
+                                            </div>
+                                            <div class="col-md-3 switch-wrap d-flex">
+                                                <div class="primary-checkbox">
+                                                    <input class="checkbox" name="checkboxName[]" value='Product inventory' type="checkbox" id="fith-checkbox">
+                                                    <label for="fith-checkbox"></label>
+                                                </div>
+                                                <p>Product inventory</p>
+                                            </div>
+                                            
+                                            <div class="col-md-9 form-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                                                    <input id="details4" type="text" name="details[]"  class="single-input" placeholder="Eg. Production inventory">
+                                            </div>
+<!--
+                                            <div class="form-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                                                <label >More Details</label>
+                                                <textarea rows="3" name="message1" required class="single-input" placeholder="Enter more details"></textarea>
+                                            </div>
+-->
                                         </div>
                                             <div class="col-md-6 form-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                 <label >Address</label>
@@ -598,7 +674,7 @@ if(isset($_SESSION['log_in']))
                                               
                                                 <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <label >Area Name</label>
-                                                    <input type="text" name="Area_Name1" required class="single-input" placeholder="Enter the open area name">
+                                                    <input type="text" name="Area_Name1" required class="single-input" placeholder="Enter area name">
                                                 </div>
 
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -664,7 +740,7 @@ if(isset($_SESSION['log_in']))
                                                     <m2>&#x2022 m x m = m²</m2>
                                                     </div>
 
-                                                    <input type="text" name="Area1" required class="single-input" placeholder="Enter open area">
+                                                    <input type="text" name="Area1" required class="single-input" placeholder="Enter area">
                                                 </div>
                                               
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -675,7 +751,7 @@ if(isset($_SESSION['log_in']))
                                                 <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <hr>
                                                     <label >Area Name</label>
-                                                    <input type="text" onblur="checkRequired(this.value, 'Area2')" name="Area_Name2" id="Area_Name2" class="single-input" placeholder="Enter the open area name">
+                                                    <input type="text" onblur="checkRequired(this.value, 'Area2')" name="Area_Name2" id="Area_Name2" class="single-input" placeholder="Enter area name">
                                                 </div>
                                               
 <!--
@@ -710,7 +786,7 @@ if(isset($_SESSION['log_in']))
 
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <label>Area m²</label>
-                                                    <input type="text" name="Area2" id="Area2" class="single-input" placeholder="Enter open area" onblur="checkRequired(this.value, 'Area_Name2')">
+                                                    <input type="text" name="Area2" id="Area2" class="single-input" placeholder="Enter area" onblur="checkRequired(this.value, 'Area_Name2')">
                                                 </div>
                                               
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -721,7 +797,7 @@ if(isset($_SESSION['log_in']))
                                                 <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <hr>
                                                     <label >Area Name</label>
-                                                    <input type="text" name="Area_Name3" id="Area_Name3" class="single-input" placeholder="Enter the open area name" onblur="checkRequired(this.value, 'Area3')">
+                                                    <input type="text" name="Area_Name3" id="Area_Name3" class="single-input" placeholder="Enter area name" onblur="checkRequired(this.value, 'Area3')">
                                                 </div>
                                               
 <!--
@@ -756,7 +832,7 @@ if(isset($_SESSION['log_in']))
 
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <label>Area m²</label>
-                                                    <input type="text" name="Area3" id="Area3" class="single-input" placeholder="Enter open area" onblur="checkRequired(this.value, 'Area_Name3')">
+                                                    <input type="text" name="Area3" id="Area3" class="single-input" placeholder="Enter area" onblur="checkRequired(this.value, 'Area_Name3')">
                                                 </div>
                                               
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -767,7 +843,7 @@ if(isset($_SESSION['log_in']))
                                                 <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <hr>
                                                     <label >Area Name</label>
-                                                    <input type="text" name="Area_Name4" id="Area_Name4" class="single-input" placeholder="Enter the open area name" onblur="checkRequired(this.value, 'Area4')">
+                                                    <input type="text" name="Area_Name4" id="Area_Name4" class="single-input" placeholder="Enter area name" onblur="checkRequired(this.value, 'Area4')">
                                                 </div>
                                               
 <!--
@@ -802,7 +878,7 @@ if(isset($_SESSION['log_in']))
 
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <label>Area m²</label>
-                                                    <input type="text" name="Area4" id="Area4" class="single-input" placeholder="Enter open area" onblur="checkRequired(this.value, 'Area_Name4')">
+                                                    <input type="text" name="Area4" id="Area4" class="single-input" placeholder="Enter area" onblur="checkRequired(this.value, 'Area_Name4')">
                                                 </div>
                                               
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -813,7 +889,7 @@ if(isset($_SESSION['log_in']))
                                                 <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <hr>
                                                     <label data-scroll-index="6">Area Name</label>
-                                                    <input type="text" name="Area_Name5" id="Area_Name5" class="single-input" placeholder="Enter the open area name" onblur="checkRequired(this.value, 'Area5')">
+                                                    <input type="text" name="Area_Name5" id="Area_Name5" class="single-input" placeholder="Enter area name" onblur="checkRequired(this.value, 'Area5')">
                                                 </div>
                                               
 <!--
@@ -848,7 +924,7 @@ if(isset($_SESSION['log_in']))
 
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <label>Area m²</label>
-                                                    <input type="text" name="Area5" id="Area5" class="single-input" placeholder="Enter open area" onblur="checkRequired(this.value, 'Area_Name5')">
+                                                    <input type="text" name="Area5" id="Area5" class="single-input" placeholder="Enter area" onblur="checkRequired(this.value, 'Area_Name5')">
                                                 </div>
                                               
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -861,7 +937,7 @@ if(isset($_SESSION['log_in']))
                                                 <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <hr>
                                                     <label >Area Name</label>
-                                                    <input type="text" name="Area_Name6" id="Area_Name6" class="single-input" placeholder="Enter the open area name" onblur="checkRequired(this.value, 'Area6')">
+                                                    <input type="text" name="Area_Name6" id="Area_Name6" class="single-input" placeholder="Enter area name" onblur="checkRequired(this.value, 'Area6')">
                                                 </div>
                                             
 <!--
@@ -896,7 +972,7 @@ if(isset($_SESSION['log_in']))
 
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <label>Area m²</label>
-                                                    <input type="text" name="Area6" id="Area6" class="single-input" placeholder="Enter open area" onblur="checkRequired(this.value, 'Area_Name6')">
+                                                    <input type="text" name="Area6" id="Area6" class="single-input" placeholder="Enter area" onblur="checkRequired(this.value, 'Area_Name6')">
                                                 </div>
                                             
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -907,7 +983,7 @@ if(isset($_SESSION['log_in']))
                                                 <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <hr>
                                                     <label >Area Name</label>
-                                                    <input type="text" name="Area_Name7" id="Area_Name7" class="single-input" placeholder="Enter the open area name" onblur="checkRequired(this.value, 'Area7')">
+                                                    <input type="text" name="Area_Name7" id="Area_Name7" class="single-input" placeholder="Enter area name" onblur="checkRequired(this.value, 'Area7')">
                                                 </div>
                                             
 <!--
@@ -942,7 +1018,7 @@ if(isset($_SESSION['log_in']))
 
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <label>Area m²</label>
-                                                    <input type="text" name="Area7" id="Area7" class="single-input" placeholder="Enter open area" onblur="checkRequired(this.value, 'Area_Name7')">
+                                                    <input type="text" name="Area7" id="Area7" class="single-input" placeholder="Enter area" onblur="checkRequired(this.value, 'Area_Name7')">
                                                 </div>
                                             
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -953,7 +1029,7 @@ if(isset($_SESSION['log_in']))
                                                 <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <hr>
                                                     <label >Area Name</label>
-                                                    <input type="text" name="Area_Name8" id="Area_Name8" class="single-input" placeholder="Enter the open area name" onblur="checkRequired(this.value, 'Area8')">
+                                                    <input type="text" name="Area_Name8" id="Area_Name8" class="single-input" placeholder="Enter area name" onblur="checkRequired(this.value, 'Area8')">
                                                 </div>
                                                 
 <!--
@@ -988,7 +1064,7 @@ if(isset($_SESSION['log_in']))
 
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <label>Area m²</label>
-                                                    <input type="text" name="Area8" id="Area8" class="single-input" placeholder="Enter open area" onblur="checkRequired(this.value, 'Area_Name8')">
+                                                    <input type="text" name="Area8" id="Area8" class="single-input" placeholder="Enter area" onblur="checkRequired(this.value, 'Area_Name8')">
                                                 </div>
                                             
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -999,7 +1075,7 @@ if(isset($_SESSION['log_in']))
                                                 <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <hr>
                                                     <label >Area Name</label>
-                                                    <input type="text" name="Area_Name9" id="Area_Name9" class="single-input" placeholder="Enter the open area name" onblur="checkRequired(this.value, 'Area9')">
+                                                    <input type="text" name="Area_Name9" id="Area_Name9" class="single-input" placeholder="Enter area name" onblur="checkRequired(this.value, 'Area9')">
                                                 </div>
                                             
 <!--
@@ -1034,7 +1110,7 @@ if(isset($_SESSION['log_in']))
 
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <label>Area m²</label>
-                                                    <input type="text" name="Area9" id="Area9" class="single-input" placeholder="Enter open area" onblur="checkRequired(this.value, 'Area_Name9')">
+                                                    <input type="text" name="Area9" id="Area9" class="single-input" placeholder="Enter area" onblur="checkRequired(this.value, 'Area_Name9')">
                                                 </div>
                                             
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -1045,7 +1121,7 @@ if(isset($_SESSION['log_in']))
                                                 <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <hr>
                                                     <label >Area Name</label>
-                                                    <input type="text" name="Area_Name10" id="Area_Name10" class="single-input" placeholder="Enter the open area name" onblur="checkRequired(this.value, 'Area10')">
+                                                    <input type="text" name="Area_Name10" id="Area_Name10" class="single-input" placeholder="Enter area name" onblur="checkRequired(this.value, 'Area10')">
                                                 </div>
                                             
 <!--
@@ -1080,7 +1156,7 @@ if(isset($_SESSION['log_in']))
 
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                                     <label>Area m²</label>
-                                                    <input type="text" name="Area10" id="Area10" class="single-input" placeholder="Enter open area" onblur="checkRequired(this.value, 'Area_Name10')">
+                                                    <input type="text" name="Area10" id="Area10" class="single-input" placeholder="Enter area" onblur="checkRequired(this.value, 'Area_Name10')">
                                                 </div>
                                             
                                                 <div class="form-group col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
@@ -1091,16 +1167,8 @@ if(isset($_SESSION['log_in']))
                                             </div>
                                         <div style="padding-bottom: 20px" class="col-md-12 form-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">
                                             <hr>
-                                            <h3 class="mb-30">Step 4: Attach a picture of each area</h3>
-<!--
-                                            <div class="form-group col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                                <label><br>&#x2022 Name the file according to area
-                                                    <br data-scroll-index="7">&#x2022 File size must  exceed 2 mb
-                                                    <br>&#x2022 Choose a JPEG, JPG or PNG file
-                                                </label>
-                                                <input name="userfile[]" multiple="multiple" type="file" id="file">
-                                            </div>
--->
+                                            <h3 class="mb-30">Step 4: Attach files of site</h3>
+                                            
 <!--                                            <a class="genric-btn primary small wow fadeInLeft"  data-wow-duration="1s" data-wow-delay=".2s" href="dropzone/index.php" target="_blank">Resize Image Assistant</a>-->
                                             <?php
                                                 //deleteing images
@@ -1115,8 +1183,9 @@ if(isset($_SESSION['log_in']))
                                                     <i class="fa fa-2x fa-exclamation-circle float-right"></i>
                                                     <ol class="m-0">
                                                         <label>
-                                                        <br>&#x2022 File size must  exceed 5 mb.
+                                                        <br>&#x2022 Attach pictures of each area.
                                                         <br>&#x2022 Choose a JPEG, JPG or PNG file.
+                                                        <br>&#x2022 File size must not exceed 5MB.
                                                         </label>
                                                     </ol>
                                                 </div>
@@ -1141,7 +1210,7 @@ if(isset($_SESSION['log_in']))
                                                         </div>
 
                                                         <div data-scroll-index="7" class="form-group">
-                                                            <button type="submit" id="add_file" class="btn btn-primary" name="submit"><i class="fa fa-upload"></i><label>Upload File(s)</label></button>        
+                                                            <button type="submit" id="add_file" class="btn btn-primary" name="submit"><i class="fa fa-upload"></i>Upload Pictures</button>        
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1188,11 +1257,28 @@ if(isset($_SESSION['log_in']))
                                              });
                                             </script>
                                         </div>
-
+                                        <div style="padding-bottom: 20px" class="col-md-12 form-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">
+                                            <div class="container">
+                                                <div class="alert alert-warning my-2">
+                                                    <i class="fa fa-2x fa-exclamation-circle float-right"></i>
+                                                    <ol class="m-0">
+                                                        <label>
+                                                        <br>&#x2022 Attach a building plan/map.    
+                                                        <br>&#x2022 Choose a PDF or Excel file.
+                                                        <br>&#x2022 File size must not exceed 5MB.
+                                                        </label>
+                                                    </ol>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header"><i class="glyphicon glyphicon-upload"></i> <label>Upload Multiple Files</label></div>
+                                                    <input name="userfile[]" multiple="multiple" required type="file" id="file">
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div style="padding-bottom: 20px" class="col-md-12 form-group wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">
                                             <hr>
                                             <h3 class="mb-30">Step 5: Confirm and Send</h3>
-                                            <div class="col-md-12 single-element-widget">
+                                            <div class="col-md-12 switch-wrap d-flex">
                                                 <div class="primary-checkbox">
                                                     <input type="checkbox" name="checkbox" value="check" id="default-checkbox">
                                                     <label for="default-checkbox"></label>

@@ -6,7 +6,23 @@ use PHPMailer\PHPMailer\Exception;
 require_once __DIR__ . '/vendor/autoload.php';
 
 //Grab variables
-$message1 = $_POST['message1'];
+if(isset($_POST['checkboxName']))
+{
+    $foo2 = '';
+    foreach($_POST['checkboxName'] as $check) 
+    {         
+        $foo2 .= ($check . '<br>');    
+    } 
+}
+if(isset($_POST['details']))
+{
+    $foo3 = '';
+    foreach($_POST['details'] as $details) 
+    {         
+        $foo3 .= ($details . '<br>');    
+    } 
+}
+
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];
@@ -39,11 +55,12 @@ for ($i = 1; $i <= 10; $i++) {
     }
 }
 
+//print_r($foo3);
+//var_dump($foo2);
+
 //Create new PDF instance
-//$footertext='{PAGENO} - {DATE j-m-Y} - Wamazoola Forms';
 $mpdf = new \Mpdf\Mpdf();
 
-//$stylesheet = file_get_contents('style.css');
 //Create PDF
 
 // Write PDF
@@ -53,9 +70,12 @@ $mpdf->WriteHTML('
     <a href="http://ucr.nz">
         <img src="img/logofinal.png" alt="">
     </a>
+<hr>
 </div>
+<div id="test1">
 <h2>New Use Case Matrix</h2>
-<h3>Side Estimator</h3>
+<hr>
+<h3>Site Estimator</h3>
 <strong>First Name: </strong>' . $fname . '<br />
 <strong>Last Name: </strong>' . $lname . '<br />
 <strong>Email: </strong>' . $email . '<br /><br />
@@ -63,16 +83,33 @@ $mpdf->WriteHTML('
 <strong>Suburb: </strong>' . $suburb . '<br />
 <strong>City: </strong>' . $city . '<br />
 <strong>Postcode: </strong>' . $postcode . '<br />
-<h3>Summary Description<br /></h3>
-' . $message1 .'
+<hr>
+<h4>Use Case Type<br /></h4>
+<div id="usecasearea">
+' . $foo2 .'</div><br />
+<h4>More details<br /></h4>
+' . $foo3 .'
 <br />
-<br />
-
 <style>
+
+#usecasearea {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  background-color: #f37a20;
+  color: white;
+  padding: 20px;
+}
+
 #customers {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
   border-collapse: collapse;
+  width: 100%;
+}
+
+#test1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
   width: 100%;
 }
 
@@ -131,37 +168,13 @@ $mpdf->WriteHTML('
     <td>' . $not . '</td>
   </tr>
   </table>
-  
+<br />
+<br />
+<hr>
 <h3>Summary Description<br /></h3>
 ' . $message2 . '
 <br />
 <br />
-  
-<style>
-#customers {
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #f37a20;
-  color: white;
-}
-</style>
 <table id="customers">
   <tr>
     <th></strong>Area Name<strong></th>
@@ -172,6 +185,7 @@ $mpdf->WriteHTML('
   </tr>
   '. $foo .'
 </table>
+</div>
 ');
 
 $data = '';
@@ -269,36 +283,36 @@ try {
     $mail->AddAttachment($file);
 }      
     
-    //2MB multiple attachments code
-//    for ($ct = 0; $ct < count($_FILES['userfile']['tmp_name']); $ct++) {
-//        
-//    $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['userfile']['name'][$ct]));
-//    $errors= array();
-//    $filename = $_FILES['userfile']['name'][$ct];
-//    $file_size =$_FILES['userfile']['size'][$ct];
-//    $file_tmp =$_FILES['userfile']['tmp_name'][$ct];
-//    $file_type=$_FILES['userfile']['type'][$ct];
-//    $file_ext=strtolower(end(explode('.',$_FILES['userfile']['name'][$ct])));
-//        
-//    $extensions= array("jpeg","jpg","png");
-//        
-//    if(in_array($file_ext,$extensions)=== false){
-//         $errors[]="extension not allowed, please choose a JPEG or PNG file.";
-//      }
-//      
-//      if($file_size > 2097152){
-//         $errors[]='File size must be excately 2 MB';
-//      }
-//        
-//    if(empty($errors)==true){
-//         $mail->addAttachment($file_tmp,"images/".$filename);
-//         echo "Success";
-//      }else{
-//         print_r($errors);
-//      }
-//}
+//    2MB multiple attachments code
+    for ($ct = 0; $ct < count($_FILES['userfile']['tmp_name']); $ct++) {
+        
+    $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['userfile']['name'][$ct]));
+    $errors= array();
+    $filename = $_FILES['userfile']['name'][$ct];
+    $file_size =$_FILES['userfile']['size'][$ct];
+    $file_tmp =$_FILES['userfile']['tmp_name'][$ct];
+    $file_type=$_FILES['userfile']['type'][$ct];
+    $file_ext=strtolower(end(explode('.',$_FILES['userfile']['name'][$ct])));
+        
+    $extensions= array("pdf","xlsx");
+        
+    if(in_array($file_ext,$extensions)=== false){
+         $errors[]="extension not allowed, please choose a PDF or XLSX file.";
+      }
+      
+      if($file_size > 2097152){
+         $errors[]='File size must be excately 2 MB';
+      }
+        
+    if(empty($errors)==true){
+         $mail->addAttachment($file_tmp,"documents/".$filename);
+         echo "Success";
+      }else{
+         print_r($errors);
+      }
+}
     
-    // Content
+//     Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Enquiry from ' . $enquirydata['fname'];
     $mail->Body    = $emailbody;

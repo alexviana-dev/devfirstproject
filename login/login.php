@@ -3,7 +3,7 @@ $User=$_POST['User'];//username
 $Pass=$_POST['Pass'];//password 
 session_start();
 
-$con=mysqli_connect("localhost","root","root","practice");//mysqli("localhost","username of database","password of database","database name")
+$con=mysqli_connect("localhost","root","","practice");//mysqli("localhost","username of database","password of database","database name")
 $result=mysqli_query($con,"SELECT * FROM `loginform` WHERE `User`='$User' && `Pass`='$Pass'");
 $count=mysqli_num_rows($result);
 if($count==1)
@@ -43,8 +43,6 @@ else
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/slicknav.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/modal2.css">
-  <link rel="stylesheet" href="css/form.css" >
   <link rel="shortcut icon" href="https://demo.learncodeweb.com/favicon.ico">
 <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
   <link rel="stylesheet" href="dropzone/dropzone.css" type="text/css">
@@ -53,7 +51,6 @@ else
   <!-- Place this tag in your head or just before your close body tag. -->
 
 
-    <script src="js/form.js"></script>
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -76,19 +73,6 @@ else
     <script src="js/modalusecase2.js"></script>
     <script src="js/modalusecase3.js"></script>
     <script src="js/modalusecase4.js"></script>
-    <script src="js/jquery.validationfield.js"></script>
-<!--
-    <script src="js/app.js"></script>
-    <script src="js/jquery.js"></script>
--->
     <script src="js/switch.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    
-    <!--contact js-->
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-
     <script src="js/main.js"></script>
